@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" manifest="app.manifest">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="app.js"></script>
+	<script type="text/javascript">
+		// var appCache = window.applicationCache;
+		 
+		// window.applicationCache.addEventListener('updateready', function(e) {
+		//     if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+		//         window.applicationCache.swapCache();
+		//         if (confirm('A new version of this site is available. Load it?')) {
+		//                 window.location.reload();
+		//         }
+		//     }
+		// });
+		  
+		// appCache.update();
+		window.applicationCache.addEventListener('updateready', onUpdateReady);
+		if(window.applicationCache.status === window.applicationCache.UPDATEREADY) {
+		  window.applicationCache.swapCache();
+		  window.location.reload();
+		}
+	</script>
+</body>
+</html>
